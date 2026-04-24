@@ -1,0 +1,55 @@
+/* ══════════════════════════════════════════════════════
+   Linella CRM — Custom CSS
+   Brand colors: Red #e63946 / Teal #2a9d8f / Orange #f4a261
+   ══════════════════════════════════════════════════════ */
+
+:root {
+  --linella-red:     #e63946;
+  --linella-teal:    #2a9d8f;
+  --linella-orange:  #f4a261;
+  --linella-blue:    #457b9d;
+  --linella-dark:    #1d3557;
+}
+
+/* ── Шапка / бренд ────────────────────────────────── */
+.navbar-brand img { height: 32px; }
+.navbar          { border-bottom: 3px solid var(--linella-red); }
+
+/* ── Статусные бейджи лидов ───────────────────────── */
+.indicator-pill.Новый           { background: #6c757d; }
+.indicator-pill.Квалифицирован  { background: var(--linella-blue); }
+.indicator-pill.Переговоры      { background: var(--linella-orange); }
+.indicator-pill.Выигран         { background: var(--linella-teal); }
+.indicator-pill.Проигран        { background: #dc3545; }
+.indicator-pill.Отложен         { background: #adb5bd; }
+
+/* ── Уровни карт лояльности ────────────────────────── */
+.loyalty-tier-badge             { padding: 3px 10px; border-radius: 12px; font-weight: 600; font-size: 12px; }
+.loyalty-tier-badge.Bronze      { background: #cd7f32; color: #fff; }
+.loyalty-tier-badge.Silver      { background: #c0c0c0; color: #333; }
+.loyalty-tier-badge.Gold        { background: #ffd700; color: #333; }
+.loyalty-tier-badge.Platinum    { background: var(--linella-dark); color: #e2e8f0; }
+
+/* ── Карточки дашборда ─────────────────────────────── */
+.linella-stat-card              { border-left: 4px solid var(--linella-red); border-radius: 6px; padding: 16px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.linella-stat-card .value       { font-size: 2rem; font-weight: 700; color: var(--linella-dark); }
+.linella-stat-card .label       { font-size: 0.85rem; color: #6c757d; text-transform: uppercase; letter-spacing: .05em; }
+
+/* ── Кнопки с брендингом ───────────────────────────── */
+.btn-linella-primary            { background: var(--linella-red); color: #fff; border: none; }
+.btn-linella-primary:hover      { background: #c1121f; color: #fff; }
+.btn-linella-secondary          { background: var(--linella-teal); color: #fff; border: none; }
+.btn-linella-secondary:hover    { background: #21867a; color: #fff; }
+
+/* ── Produs Local тег ──────────────────────────────── */
+.produs-local-badge             { background: #52b788; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+
+/* ── Приоритеты тикетов ────────────────────────────── */
+.priority-Критический           { color: #dc3545; font-weight: 700; }
+.priority-Высокий               { color: var(--linella-orange); font-weight: 600; }
+.priority-Средний               { color: var(--linella-blue); }
+.priority-Низкий                { color: #6c757d; }
+
+/* ── SLA нарушение ─────────────────────────────────── */
+.sla-breached td                { background: #fff5f5 !important; }
+.sla-breach-badge               { background: #dc3545; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; }
