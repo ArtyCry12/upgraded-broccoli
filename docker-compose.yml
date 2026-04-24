@@ -1,0 +1,48 @@
+# ──────────────────────────────────────────────────────────
+#  Linella CRM — Docker Compose (Development)
+#  Основан на официальном frappe/frappe_docker
+# ──────────────────────────────────────────────────────────
+version: "3.8"
+
+services:
+
+  backend:
+    image: frappe/bench:latest
+    platform: linux/amd64
+    restart: unless-stopped
+    volumes:
+      - ./:/workspace/frappe-bench/apps/linella_crm
+      - frappe-bench-sites:/workspace/frappe-bench/sites
+    environment:
+      FRAPPE_SITE_NAME: linella.localhost
+    depends_on:
+      - db
+      - redis-cache
+      - redis-queue
+    ports:
+      - "8000:8000"
+
+  db:
+    image: mariadb:10.6
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: frappe
+      MYSQL_USER: frappe
+      MYSQL_PASSWORD: frappe
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  redis-cache:
+    image: redis:7-alpine
+    restart: unless-stopped
+
+  redis-queue:
+    image: redis:7-alpine
+    restart: unless-stopped
+
+volumes:
+  frappe-bench-sites:
+  mariadb-data:
